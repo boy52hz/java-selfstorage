@@ -18,17 +18,21 @@ public class Person {
     }
     /***
      * TODO: set person firstname and return chaining method
+     * @param firstname
      * @return this 
      */
-    public Person setFirstname() {
-        return null;
+    public Person setFirstname(String firstname) {
+        this.firstname = firstname;
+        return this;
     }
     /***
      * TODO: set person lastname and return chaining method
+     * @param lastname
      * @return this 
      */
-    public Person setLastname() {
-        return null;
+    public Person setLastname(String lastname) {
+        this.lastname = lastname;
+        return this;
     }
 
     @Override
