@@ -12,7 +12,7 @@ public class StorageList {
      * @param storage 
      */
     public void add(Storage storage) {
-        
+        storageList[count++] = storage;
     }
     
     /***
@@ -21,6 +21,9 @@ public class StorageList {
      * @return Storage 
      */
     public Storage find(int id) {
+        for (int i = 0; i < count; i++) {
+            if (storageList[i].getId() == id) return storageList[i];
+        }
         return null;
     }
     
@@ -30,7 +33,10 @@ public class StorageList {
      * @return index
      */
     public int findIndex(Storage storage) {
-        return 0;
+        for (int i = 0; i < count; i++) {
+            if (storageList[i].equals(storage)) return i;
+        }
+        return -1;
     }
     
     /***
@@ -38,6 +44,7 @@ public class StorageList {
      * @return
      */
     public boolean isFull() {
+        if (count < storageList.length) return false;
         return true;
     }
 }
