@@ -1,10 +1,13 @@
 package Base;
 
 public class Person {
+    private static int nextId;
+    private int id;
     private String firstname;
     private String lastname;
     
     public Person(String firstname, String lastname) {
+        this.id = nextId++;
         this.firstname = firstname;
         this.lastname = lastname;
     }

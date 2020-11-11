@@ -27,6 +27,6 @@ public class StorageList {
     }
     
     public boolean isFull() {
-        return (count < storageList.length);
+        return (count >= storageList.length);
     }
 }
