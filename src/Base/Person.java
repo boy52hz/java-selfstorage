@@ -12,6 +12,10 @@ public class Person {
         this.lastname = lastname;
     }
     
+    public int getId() {
+        return id;
+    }
+    
     public String getFirstname() {
         return firstname;
     }

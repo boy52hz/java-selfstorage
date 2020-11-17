@@ -6,31 +6,37 @@ public class StorageService {
     private String name;
     private StorageList storages;
     
-    public StorageService(String name, StorageList storages) {
+    public StorageService(String name, int storageLot) {
         this.name = name;
-        this.storages = storages;
+        this.storages = new StorageList(storageLot);
     }
     /***
      * TODO: Customer will require storage type that he/she need
-     * 1.check if our storage is full
-     * 2.check if customer can afford this
-     * 3.add storage to storage list
+     * 1.check if customer can afford this
      * 
      * @param customer
      * @param storageType
      * @return Storage
      */
-    public Storage rentStorage(Person customer, StorageType storageType) {
-        return null;
+    public Storage rentStorage(Person customer, double lengthM, double widthM) {
+        if (storages.isFull()) {
+            return null;
+        }
+        Storage storage = new Storage(customer, lengthM, widthM);
+        storages.add(storage);
+        return storage;
     }
-    /***
-     * TODO: 1500, 2000, 2500 for SMALL, MEDIUM, LARGE
-     * @param storageType
-     * @return service price
-     */
-    private static double getCost(StorageType storageType) {
-        return 0;
+    
+    public boolean unrentStorage(Storage storage) {
+        int storageIndex = storages.findIndex(storage);
+        if (storageIndex == -1) {
+            return false;
+        }
+        storages.removeAt(storageIndex);
+        return true;
     }
+    
+    
 
     @Override
     public String toString() {
