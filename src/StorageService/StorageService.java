@@ -1,5 +1,10 @@
 package StorageService;
-
+/**
+ *<h1>Self-Storage Service</h1>
+ * @author 
+ * @version 1.0
+ * @since 2020-11-10
+ */
 import Base.Person;
 
 public class StorageService {
