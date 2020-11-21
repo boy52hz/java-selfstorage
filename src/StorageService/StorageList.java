@@ -48,14 +48,14 @@ public class StorageList {
      * @return avaliable storages
      */
     public int getAvaliable() {
-        return 0;
+        return storageList.length-count;
     }
     /***
      * TODO: get owned storages
      * @return get owned storage
      */
     public int getOwnedStorage() {
-        return 0;
+        return count;
     }
 
     @Override

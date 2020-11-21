@@ -23,20 +23,12 @@ public class Person {
     public String getLastname() {
         return lastname;
     }
-    /***
-     * TODO: set person firstname and return chaining method
-     * @param firstname
-     * @return this 
-     */
+
     public Person setFirstname(String firstname) {
         this.firstname = firstname;
         return this;
     }
-    /***
-     * TODO: set person lastname and return chaining method
-     * @param lastname
-     * @return this 
-     */
+
     public Person setLastname(String lastname) {
         this.lastname = lastname;
         return this;

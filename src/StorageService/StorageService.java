@@ -43,6 +43,10 @@ public class StorageService {
     public int getOwnedStorage() {
         return storages.getOwnedStorage();
     }
+    
+    public boolean isFull(){
+        return storages.isFull();
+    }
 
     @Override
     public String toString() {
