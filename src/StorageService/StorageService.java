@@ -36,7 +36,13 @@ public class StorageService {
         return true;
     }
     
+    public int getAvaliable() {
+        return storages.getAvaliable();
+    }
     
+    public int getOwnedStorage() {
+        return storages.getOwnedStorage();
+    }
 
     @Override
     public String toString() {

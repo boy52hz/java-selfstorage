@@ -6,11 +6,10 @@ public class Main {
         StorageService storageService = new StorageService("SIT-Storage", 10);
         Person p1 = new Person("Tharadon", "Saenmart");
         Storage myStorage = storageService.rentStorage(p1, 1.0, 1.0);
-        Storage myStorage2 = storageService.rentStorage(p1, 3.0, 3.0);
-        storageService.unrentStorage(myStorage2);
-        myStorage2 = storageService.rentStorage(p1, 9.0, 9.0);
-        storageService.rentStorage(p1, 7.0, 7.0);
-        storageService.rentStorage(p1, 7.0, 7.0);
+        Storage myStorage2 = storageService.rentStorage(p1, 2.0, 2.0);
+        Storage myStorage3 = storageService.rentStorage(p1, 3.0, 3.0);
+        Storage myStorage4 = storageService.rentStorage(p1, 4.0, 4.0);
+        System.out.println(storageService);
         storageService.unrentStorage(myStorage2);
         System.out.println(storageService);
     }

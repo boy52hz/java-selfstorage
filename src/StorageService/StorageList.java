@@ -13,9 +13,10 @@ public class StorageList {
     }
     
     public boolean removeAt(int index) {
+        for (int i = index; i < count; i++) {
+            storageList[i] = storageList[i+1];
+        }
         count--;
-        storageList[index] = storageList[count];
-        storageList[count] = null;
         return true;
     }
     
@@ -42,9 +43,19 @@ public class StorageList {
     public boolean isFull() {
         return (count >= storageList.length);
     }
-    
+    /***
+     * TODO: get avaliable storages
+     * @return avaliable storages
+     */
+    public int getAvaliable() {
+        return 0;
+    }
+    /***
+     * TODO: get owned storages
+     * @return get owned storage
+     */
     public int getOwnedStorage() {
-        return count;
+        return 0;
     }
 
     @Override
