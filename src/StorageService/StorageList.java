@@ -43,17 +43,11 @@ public class StorageList {
     public boolean isFull() {
         return (count >= storageList.length);
     }
-    /***
-     * TODO: get avaliable storages
-     * @return avaliable storages
-     */
+
     public int getAvaliable() {
         return storageList.length-count;
     }
-    /***
-     * TODO: get owned storages
-     * @return get owned storage
-     */
+
     public int getOwnedStorage() {
         return count;
     }

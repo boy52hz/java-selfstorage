@@ -10,9 +10,6 @@ public class Main {
         Storage myStorage3 = storageService.rentStorage(p1, 3.0, 3.0);
         Storage myStorage4 = storageService.rentStorage(p1, 4.0, 4.0);
         System.out.println(storageService);
-        storageService.unrentStorage(myStorage2);
-        System.out.println(storageService.getOwnedStorage());
-        System.out.println(storageService.getAvaliable());
-        
+        storageService.unrentStorage(myStorage2);  
    }
 }

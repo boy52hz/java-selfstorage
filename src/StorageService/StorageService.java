@@ -52,6 +52,8 @@ public class StorageService {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("StorageService{name=").append(name);
+        sb.append(", owned=").append(getOwnedStorage());
+        sb.append(", avaliable=").append(getAvaliable());
         sb.append(", storages=").append(storages);
         sb.append('}');
         return sb.toString();
