@@ -1,12 +1,13 @@
 package StorageService;
+
+import Base.Person;
+
 /**
  * This class represents a storage in self-storage service.
  * @author Tharadon Saenmart 
  * @version 1.0
  * @since Nov 10, 2020
  */
-import Base.Person;
-
 public class Storage {
     private static int storageId;
     private int id;
@@ -64,7 +65,10 @@ public class Storage {
         }
         return type;
     }
-
+    /***
+     * 
+     * @return All Storage object's data as string
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
