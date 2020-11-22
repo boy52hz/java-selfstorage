@@ -4,6 +4,7 @@ import StorageService.*;
 public class Main {
     public static void main(String[] args) {
         StorageService storageService = new StorageService("SIT-Storage", 10);
+        ServiceCalculation serviceCalculation = new ServiceCalculation(50.0);
         Person p1 = new Person("Tharadon ", " Saenmart");
         Storage myStorage = storageService.rentStorage(p1, 1.0, 1.0);
         Storage myStorage2 = storageService.rentStorage(p1, 2.0, 2.0);
@@ -11,5 +12,6 @@ public class Main {
         Storage myStorage4 = storageService.rentStorage(p1, 4.0, 4.0);
         System.out.println(storageService);
         storageService.unrentStorage(myStorage2);  
+        System.out.println(serviceCalculation.getServiceFee(4.0));
    }
 }

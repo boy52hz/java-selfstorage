@@ -53,6 +53,9 @@ public class StorageService {
         return storages.isFull();
     }
 
+    public double getServiceFee(){
+        return getServiceFee();
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
