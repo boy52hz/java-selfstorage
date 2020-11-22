@@ -14,12 +14,7 @@ public class BankAccount {
     public BankAccount(Person accountOwner, String accountName, double initialDeposit) {
         this.accountNo = nextAccountNo++;
         this.accountOwner = accountOwner;
-
-        if (accountName != null && !accountName.trim().isEmpty()) {
-            this.accountName = accountName;
-        } else {
-            this.accountName = accountOwner.getFirstname() + " " + accountOwner.getLastname();
-        }
+        this.accountName = accountName;
 
         if (initialDeposit > 0) {
             this.balance = BigDecimal.valueOf(initialDeposit);
@@ -33,11 +28,11 @@ public class BankAccount {
     }
 
     public BankAccount(Person accountOwner, double initialDeposit) {
-        this(accountOwner, null, initialDeposit);
+        this(accountOwner, accountOwner.getFullname(), initialDeposit);
     }
 
     public BankAccount(Person accountOwner) {
-        this(accountOwner, null, 0);
+        this(accountOwner, accountOwner.getFullname(), 0);
     }
 
     public BankAccount deposit(double amount) {
