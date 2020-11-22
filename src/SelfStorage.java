@@ -1,7 +1,7 @@
 import Base.Person;
 import StorageService.*;
 
-public class Main {
+public class SelfStorage {
     public static void main(String[] args) {
         StorageService storageService = new StorageService("SIT-Storage", 10);
         Person p1 = new Person("Tharadon ", " Saenmart");
