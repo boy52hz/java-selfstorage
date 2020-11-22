@@ -10,6 +10,7 @@ public class StorageList {
 
     public boolean add(Storage storage) {
         storageList[count++] = storage;
+        return true;
     }
     
     public boolean removeAt(int index) {
@@ -45,7 +46,7 @@ public class StorageList {
     }
 
     public int getAvaliable() {
-        return storageList.length-count;
+        return (storageList.length - count);
     }
 
     public int getOwnedStorage() {
