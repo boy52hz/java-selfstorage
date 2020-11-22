@@ -8,8 +8,8 @@ public class Person {
     
     public Person(String firstname, String lastname) {
         this.id = nextId++;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstname = firstname.trim();
+        this.lastname = lastname.trim();
     }
     
     public int getId() {
