@@ -8,7 +8,7 @@ public class StorageList {
         this.storageList = new Storage[size];
     }
 
-    public void add(Storage storage) {
+    public boolean add(Storage storage) {
         storageList[count++] = storage;
     }
     

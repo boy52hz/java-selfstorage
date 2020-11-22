@@ -42,7 +42,7 @@ public class StorageService {
         return storages.getOwnedStorage();
     }
     
-    public boolean isFull(){
+    public boolean isFull() {
         return storages.isFull();
     }
 
