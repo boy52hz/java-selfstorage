@@ -15,14 +15,7 @@ public class StorageService {
         this.name = name;
         this.storages = new StorageList(storageLot);
     }
-    /***
-     * TODO: Customer will require storage type that he/she need
-     * 1.check if customer can afford this
-     * 
-     * @param customer
-     * @param storageType
-     * @return Storage
-     */
+
     public Storage rentStorage(Person customer, double lengthM, double widthM) {
         if (storages.isFull()) {
             return null;

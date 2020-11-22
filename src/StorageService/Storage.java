@@ -1,5 +1,10 @@
 package StorageService;
-
+/**
+ * This class represents a storage in self-storage service.
+ * @author Tharadon Saenmart 
+ * @version 1.0
+ * @since Nov 10, 2020
+ */
 import Base.Person;
 
 public class Storage {
@@ -8,26 +13,45 @@ public class Storage {
     private double lengthM;
     private double widthM;
     private Person owner;
-
+    /***
+     * Create a new Storage object with the given 
+     * owner, storage's length(m), storage's width(m)
+     * PS.The owner need to be Person object.
+     * @param owner
+     * @param lengthM
+     * @param widthM
+     */
     public Storage(Person owner, double lengthM, double widthM) {
         this.id = storageId++;
         this.lengthM = lengthM;
         this.widthM = widthM;
         this.owner = owner;
     }
-    
+    /***
+     * Get an ID of storage
+     * @return ID of storage
+     */
     public int getId() {
         return id;
     }
-    
+    /***
+     * Get storage owner
+     * @return Storage owner
+     */
     public Person getOwner() {
         return owner;
     }
-    
+    /***
+     * Get an area of storage
+     * @return An area of storage
+     */
     public double getArea() {
         return (widthM * lengthM);
     }
-    
+    /***
+     * Get a storage type
+     * @return A type of storage
+     */
     public StorageType getType() {
         double area = getArea();
         StorageType type = null;
