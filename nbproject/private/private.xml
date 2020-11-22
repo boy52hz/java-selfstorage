@@ -4,16 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/membership/MemberAccount.java</file>
-            <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/Base/Person.java</file>
             <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/membership/TransactionHistory.java</file>
             <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/membership/TransactionType.java</file>
-            <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/StorageService/Storage.java</file>
-            <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/StorageService/StorageService.java</file>
             <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/membership/AccountTransaction.java</file>
-            <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/Main.java</file>
-            <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/StorageService/StorageType.java</file>
             <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/TestMembership.java</file>
-            <file>file:/D:/KMUTT/INT101/Project/java-selfstorage/src/StorageService/StorageList.java</file>
         </group>
     </open-files>
 </project-private>
