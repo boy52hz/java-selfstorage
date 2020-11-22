@@ -23,6 +23,10 @@ public class Person {
     public String getLastname() {
         return lastname;
     }
+    
+    public String getFullname() {
+        return firstname + " " + lastname;
+    }
 
     public Person setFirstname(String firstname) {
         this.firstname = firstname;
