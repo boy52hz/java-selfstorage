@@ -32,8 +32,13 @@ public class ServiceCalculation {
      * @return service fee multiply by rented month
      */
     public double getInvoice(LocalDateTime rentTime, double storageArea) {
-        long mounths = ChronoUnit.MONTHS.between(rentTime, LocalDateTime.now());
+        long months = ChronoUnit.MONTHS.between(rentTime, LocalDateTime.now());
         double fee = getServiceFee(storageArea);
-        return (fee * mounths);
+        
+        if (months <= 0) {
+            return fee;
+        }
+        
+        return (fee * months);
     }
 } 
