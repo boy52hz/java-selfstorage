@@ -72,6 +72,10 @@ public class StorageService {
         return unrentStorage(storage, LocalDateTime.now());
     }
     
+    public void setServiceRate(double serviceRate) {
+        serviceCalculation = new ServiceCalculation(serviceRate);
+    }
+    
      /**
      * Checks the number of available storages in the list
      * @return the number of available storages in the list
