@@ -10,7 +10,7 @@ public class Person {
     private String firstname;
     private String lastname;
     /***
-    * Create person using firstname and lastname
+    * Create person using first name and last name
     * @param firstname
     * @param lastname
     */
@@ -50,6 +50,7 @@ public class Person {
     }
     /***
     * Set first name of person
+     * @param firstname
     * @return Person
     */
     public Person setFirstname(String firstname) {
@@ -58,6 +59,7 @@ public class Person {
     }
     /***
     * Set last name of person
+     * @param lastname
     * @return Person
     */
     public Person setLastname(String lastname) {

@@ -16,7 +16,7 @@ public class ServiceCalculation {
     /***
     * Get service fee
     * @param storageArea
-    * @return service fee calculated from service rate mutiply storage area
+    * @return service fee calculated from service rate multiply storage area
     */
     public double getServiceFee(double storageArea){
         return (serviceRate * storageArea);
