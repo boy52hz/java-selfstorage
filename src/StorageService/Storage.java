@@ -14,6 +14,8 @@ public class Storage {
     private int id;
     private double lengthM;
     private double widthM;
+    private double area;
+    private StorageType type;
     private Person owner;
     private LocalDateTime timeCreated;
 
@@ -29,6 +31,8 @@ public class Storage {
         this.id = storageId++;
         this.lengthM = lengthM;
         this.widthM = widthM;
+        this.area = calculateArea(lengthM, widthM);
+        this.type = calculateType(area);
         this.owner = owner;
         this.timeCreated = LocalDateTime.now();
     }
@@ -51,22 +55,13 @@ public class Storage {
      * @return An area of storage
      */
     public double getArea() {
-        return (widthM * lengthM);
+        return area;
     }
     /***
      * Get a storage type
      * @return A type of storage
      */
     public StorageType getType() {
-        double area = getArea();
-        StorageType type = null;
-        if (area > 10) {
-            type = StorageType.LARGE;
-        } else if (area >= 5) {
-            type = StorageType.MEDIUM;
-        } else {
-            type = StorageType.SMALL;
-        }
         return type;
     }
     /**
