@@ -89,6 +89,10 @@ public class Storage {
         return type;
     }
     
+    public static double calculateArea(double length, double width) {
+        return length * width;
+    }
+    
     /***
      * 
      * @return All Storage object's data as string
