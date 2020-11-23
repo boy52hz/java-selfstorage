@@ -6,6 +6,7 @@ package StorageService;
  * @since 2020-11-10
  */
 import Base.Person;
+import java.time.LocalDateTime;
 
 public class StorageService {
     private String name;
@@ -18,23 +19,33 @@ public class StorageService {
         this.serviceCalculation = new ServiceCalculation(serviceRate);
     }
 
-    public Storage rentStorage(Person customer, double lengthM, double widthM) {
+    public Storage rentStorage(Person customer, double lengthM, double widthM, LocalDateTime stampTimeRented) {
         if (storages.isFull()) {
             return null;
         }
         Storage storage = new Storage(customer, lengthM, widthM);
         storages.add(storage);
+        storage.stampTimeRented(stampTimeRented);
         System.out.println("Your service fee: " + serviceCalculation.getServiceFee(storage.getArea()) + "baht / month.");
         return storage;
     }
     
-    public boolean unrentStorage(Storage storage) {
+    public Storage rentStorage(Person customer, double lengthM, double widthM) {
+        return rentStorage(customer, lengthM, widthM, LocalDateTime.now());
+    }
+    
+    public boolean unrentStorage(Storage storage, LocalDateTime stampTimeUnrented) {
         int storageIndex = storages.findIndex(storage);
         if (storageIndex == -1) {
             return false;
         }
         storages.removeAt(storageIndex);
+        storage.stampTimeUnrented(stampTimeUnrented);
         return true;
+    }
+    
+    public boolean unrentStorage(Storage storage) {
+        return unrentStorage(storage, LocalDateTime.now());
     }
     
     public int getAvaliable() {
@@ -43,6 +54,11 @@ public class StorageService {
     
     public int getOwnedStorage() {
         return storages.getOwnedStorage();
+    }
+    
+    public void printInvoice(Storage storage) {
+        double invoice = serviceCalculation.getInvoice(storage.getTimeRented(), storage.getArea());
+        System.out.println("Invoice: " + invoice + " baht");
     }
     
     public boolean isFull() {
