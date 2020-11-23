@@ -15,7 +15,12 @@ public class StorageList {
     
     public boolean removeAt(int index) {
         for (int i = index; i < count; i++) {
-            storageList[i] = storageList[i+1];
+            int nextIndex = (i + 1);
+            if (nextIndex < storageList.length) {
+                storageList[i] = storageList[nextIndex]; 
+            } else {
+                storageList[i] = null;
+            }
         }
         count--;
         return true;
