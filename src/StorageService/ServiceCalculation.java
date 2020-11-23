@@ -19,7 +19,7 @@ public class ServiceCalculation {
     * @return service fee calculated from service rate mutiply storage area
     */
     public double getServiceFee(double storageArea){
-        return serviceRate * storageArea;
+        return (serviceRate * storageArea);
     }
 
 } 
