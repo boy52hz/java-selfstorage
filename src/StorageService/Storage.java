@@ -1,6 +1,7 @@
 package StorageService;
 
 import Base.Person;
+import java.time.LocalDateTime;
 
 /**
  * This class represents a storage in self-storage service.
@@ -14,6 +15,8 @@ public class Storage {
     private double lengthM;
     private double widthM;
     private Person owner;
+    private LocalDateTime timeCreated;
+
     /***
      * Create a new Storage object with the given 
      * owner, storage's length(m), storage's width(m)
@@ -27,6 +30,7 @@ public class Storage {
         this.lengthM = lengthM;
         this.widthM = widthM;
         this.owner = owner;
+        this.timeCreated = LocalDateTime.now();
     }
     /***
      * Get an ID of storage
@@ -64,6 +68,13 @@ public class Storage {
             type = StorageType.SMALL;
         }
         return type;
+    }
+    /**
+     * 
+     * @return the time when this Storage object is created
+     */
+    public LocalDateTime getTimeCreated() {
+        return timeCreated;
     }
     /***
      * 
