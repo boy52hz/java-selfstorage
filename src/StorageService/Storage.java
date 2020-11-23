@@ -76,6 +76,19 @@ public class Storage {
     public LocalDateTime getTimeCreated() {
         return timeCreated;
     }
+    
+    public static StorageType calculateType(double area) {
+        StorageType type = null;
+        if (area > 10) {
+            type = StorageType.LARGE;
+        } else if (area >= 5) {
+            type = StorageType.MEDIUM;
+        } else {
+            type = StorageType.SMALL;
+        }
+        return type;
+    }
+    
     /***
      * 
      * @return All Storage object's data as string
