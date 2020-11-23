@@ -76,6 +76,7 @@ public class Storage {
     public LocalDateTime getTimeRented() {
         return timeRented;
     }
+    
     /***
      * 
      * @return the time when this Storage unrented 
@@ -85,17 +86,32 @@ public class Storage {
     }
     
     /***
+     * Stamp rented time
+     */
+    public void stampTimeRented() {
+        timeRented = LocalDateTime.now();
+    }
+    
+    /***
+     * Stamp unrented time
+     */
+    public void stampTimeUnrented() {
+        timeUnrented = LocalDateTime.now();
+    }
+    
+    /***
      * To set storage's rent time stamp
      * @param timeRented 
      */
-    public void setTimeRented(LocalDateTime timeRented) {
+    public void stampTimeRented(LocalDateTime timeRented) {
         this.timeRented = timeRented;
     }
+    
     /***
      * To set storage's unrent time stamp
      * @param timeUnrented 
      */
-    public void setTimeUnrented(LocalDateTime timeUnrented) {
+    public void stampTimeUnrented(LocalDateTime timeUnrented) {
         this.timeUnrented = timeUnrented;
     }
     
