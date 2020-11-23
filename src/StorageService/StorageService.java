@@ -10,10 +10,12 @@ import Base.Person;
 public class StorageService {
     private String name;
     private StorageList storages;
+    private ServiceCalculation serviceCalculation;
     
-    public StorageService(String name, int storageLot) {
+    public StorageService(String name, int storageLot, double serviceRate) {
         this.name = name;
         this.storages = new StorageList(storageLot);
+        this.serviceCalculation = new ServiceCalculation(serviceRate);
     }
 
     public Storage rentStorage(Person customer, double lengthM, double widthM) {
@@ -22,6 +24,7 @@ public class StorageService {
         }
         Storage storage = new Storage(customer, lengthM, widthM);
         storages.add(storage);
+        System.out.println("Your service fee: " + serviceCalculation.getServiceFee(storage.getArea()) + "baht / month.");
         return storage;
     }
     
