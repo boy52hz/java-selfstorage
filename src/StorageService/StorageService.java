@@ -10,6 +10,7 @@ import Base.Person;
 public class StorageService {
     private String name;
     private StorageList storages;
+    private ServiceCalculation serviceCalculation;
     
     public StorageService(String name, int storageLot) {
         this.name = name;
@@ -44,6 +45,11 @@ public class StorageService {
     
     public boolean isFull() {
         return storages.isFull();
+    }
+    
+    public double getServiceFee(Storage storage){
+        double storageArea = storage;
+        return serviceCalculation.getServiceFee(storageArea);
     }
 
     @Override
