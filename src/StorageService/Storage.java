@@ -17,7 +17,8 @@ public class Storage {
     private double area;
     private StorageType type;
     private Person owner;
-    private LocalDateTime timeCreated;
+    private LocalDateTime timeRented;
+    private LocalDateTime timeUnrented;
 
     /***
      * Create a new Storage object with the given 
@@ -34,7 +35,6 @@ public class Storage {
         this.area = calculateArea(lengthM, widthM);
         this.type = calculateType(area);
         this.owner = owner;
-        this.timeCreated = LocalDateTime.now();
     }
     
     /***
@@ -71,10 +71,48 @@ public class Storage {
     
     /**
      * 
-     * @return the time when this Storage object is created
+     * @return the time when this Storage rented
      */
-    public LocalDateTime getTimeCreated() {
-        return timeCreated;
+    public LocalDateTime getTimeRented() {
+        return timeRented;
+    }
+    
+    /***
+     * 
+     * @return the time when this Storage unrented 
+     */
+    public LocalDateTime getTimeUnrented() {
+        return timeUnrented;
+    }
+    
+    /***
+     * Stamp rented time
+     */
+    public void stampTimeRented() {
+        timeRented = LocalDateTime.now();
+    }
+    
+    /***
+     * Stamp unrented time
+     */
+    public void stampTimeUnrented() {
+        timeUnrented = LocalDateTime.now();
+    }
+    
+    /***
+     * To set storage's rent time stamp
+     * @param timeRented 
+     */
+    public void stampTimeRented(LocalDateTime timeRented) {
+        this.timeRented = timeRented;
+    }
+    
+    /***
+     * To set storage's unrent time stamp
+     * @param timeUnrented 
+     */
+    public void stampTimeUnrented(LocalDateTime timeUnrented) {
+        this.timeUnrented = timeUnrented;
     }
     
     /**
@@ -115,9 +153,10 @@ public class Storage {
         sb.append("Storage{id=").append(id);
         sb.append(", lengthM=").append(lengthM);
         sb.append(", widthM=").append(widthM);
-        sb.append(", area(m2)=").append(getArea());
-        sb.append(", type=").append(getType());
+        sb.append(", area(m2)=").append(area);
+        sb.append(", type=").append(type);
         sb.append(", owner=").append(owner);
+        sb.append(", timeRented=").append(timeRented);
         sb.append('}');
         return sb.toString();
     }   

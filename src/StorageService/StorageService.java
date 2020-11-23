@@ -1,11 +1,12 @@
 package StorageService;
 /**
  *<h1>Self-Storage Service</h1>
- * @author 
+ * @author Tharadon Saenmart
  * @version 1.0
  * @since 2020-11-10
  */
 import Base.Person;
+import java.time.LocalDateTime;
 
 public class StorageService {
     private String name;
@@ -31,35 +32,47 @@ public class StorageService {
      * @param customer the Person object
      * @param lengthM the length of the storage in meter
      * @param widthM the width of the storage in meter
+     * @param stampTimeRented storage rented date time
      * @return the Storage object if the storage list
      * is not full, null otherwise
      */
-    public Storage rentStorage(Person customer, double lengthM, double widthM) {
+    public Storage rentStorage(Person customer, double lengthM, double widthM, LocalDateTime stampTimeRented) {
         if (storages.isFull()) {
             return null;
         }
         Storage storage = new Storage(customer, lengthM, widthM);
         storages.add(storage);
+        storage.stampTimeRented(stampTimeRented);
         System.out.println("Your service fee: " + serviceCalculation.getServiceFee(storage.getArea()) + "baht / month.");
         return storage;
+    }
+    
+    public Storage rentStorage(Person customer, double lengthM, double widthM) {
+        return rentStorage(customer, lengthM, widthM, LocalDateTime.now());
     }
     
     /**
      * Removes the given Storage object in the storage list
      * @param storage the Storage object to be removed
+     * @param stampTimeUnrented storage unrented date time
      * @return true if the given Storage object is in the storage list,
      * false otherwise
      */
-    public boolean unrentStorage(Storage storage) {
+    public boolean unrentStorage(Storage storage, LocalDateTime stampTimeUnrented) {
         int storageIndex = storages.findIndex(storage);
         if (storageIndex == -1) {
             return false;
         }
         storages.removeAt(storageIndex);
+        storage.stampTimeUnrented(stampTimeUnrented);
         return true;
     }
     
-    /**
+    public boolean unrentStorage(Storage storage) {
+        return unrentStorage(storage, LocalDateTime.now());
+    }
+    
+     /**
      * Checks the number of available storages in the list
      * @return the number of available storages in the list
      */
@@ -73,6 +86,15 @@ public class StorageService {
      */
     public int getOwnedStorage() {
         return storages.getOwnedStorage();
+    }
+    
+    /***
+     * Print calculated invoice
+     * @param storage
+     */
+    public void printInvoice(Storage storage) {
+        double invoice = serviceCalculation.getInvoice(storage.getTimeRented(), storage.getArea());
+        System.out.println("Invoice: " + invoice + " baht");
     }
     
     /**

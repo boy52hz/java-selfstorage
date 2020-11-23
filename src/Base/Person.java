@@ -2,7 +2,7 @@ package Base;
 /***
 * This is class about person.
 * @author Chinnawat Kaewnongsang
-* version 1.0
+* @version 1.0
 */
 public class Person {
     private static int nextId;
@@ -10,7 +10,7 @@ public class Person {
     private String firstname;
     private String lastname;
     /***
-    * Create person using firstname and lastname
+    * Create person using first name and last name
     * @param firstname
     * @param lastname
     */
@@ -27,45 +27,47 @@ public class Person {
         return id;
     }
     /***
-    * Get firstname of person
-    * @return firstname
+    * Get first name of person
+    * @return person's first name
     */
     public String getFirstname() {
         return firstname;
     }
     /***
-    * Get lastname of person
-    * @return lastname
+    * Get last name of person
+    * @return person's last name
     */
     public String getLastname() {
         return lastname;
     }
     /***
-    * Get fullname of person
-    * Fullname mean firstname + lastname
-    * @return firstname + lastname
+    * Get full name of person
+    * Full name mean first name + last name
+    * @return person's full name
     */
     public String getFullname() {
         return firstname + " " + lastname;
     }
     /***
-    * Set firstname of person
-    * @return firstname
+    * Set first name of person
+     * @param firstname
+    * @return Person
     */
     public Person setFirstname(String firstname) {
         this.firstname = firstname;
         return this;
     }
     /***
-    * Set lastname of person
-    * @return lastname
+    * Set last name of person
+     * @param lastname
+    * @return Person
     */
     public Person setLastname(String lastname) {
         this.lastname = lastname;
         return this;
     }
     /***
-    * @return Person firstname and lastname
+    * @return Person object data as string format
     */
     @Override
     public String toString() {
