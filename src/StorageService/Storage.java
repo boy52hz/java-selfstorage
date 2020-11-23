@@ -36,6 +36,7 @@ public class Storage {
         this.owner = owner;
         this.timeCreated = LocalDateTime.now();
     }
+    
     /***
      * Get an ID of storage
      * @return ID of storage
@@ -43,6 +44,7 @@ public class Storage {
     public int getId() {
         return id;
     }
+    
     /***
      * Get storage owner
      * @return Storage owner
@@ -50,6 +52,7 @@ public class Storage {
     public Person getOwner() {
         return owner;
     }
+    
     /***
      * Get an area of storage
      * @return An area of storage
@@ -57,6 +60,7 @@ public class Storage {
     public double getArea() {
         return area;
     }
+    
     /***
      * Get a storage type
      * @return A type of storage
@@ -64,6 +68,7 @@ public class Storage {
     public StorageType getType() {
         return type;
     }
+    
     /**
      * 
      * @return the time when this Storage object is created
@@ -72,6 +77,11 @@ public class Storage {
         return timeCreated;
     }
     
+    /**
+     * Calculates and returns the StorageType of the given area
+     * @param area the area of the storage
+     * @return the StorageType of the given area
+     */
     private static StorageType calculateType(double area) {
         StorageType type = null;
         if (area > 10) {
@@ -84,6 +94,13 @@ public class Storage {
         return type;
     }
     
+    /**
+     * Calculates and returns the area of the given width and length
+     * without concerning about unit
+     * @param length 
+     * @param width
+     * @return the area of the given length and width
+     */
     private static double calculateArea(double length, double width) {
         return length * width;
     }
