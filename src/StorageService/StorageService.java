@@ -24,6 +24,7 @@ public class StorageService {
         }
         Storage storage = new Storage(customer, lengthM, widthM);
         storages.add(storage);
+        System.out.println("Your service fee: " + serviceCalculation.getServiceFee(storage.getArea()) + "baht / month.");
         return storage;
     }
     
@@ -47,7 +48,6 @@ public class StorageService {
     public boolean isFull() {
         return storages.isFull();
     }
-    
 
     @Override
     public String toString() {

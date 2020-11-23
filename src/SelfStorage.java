@@ -3,7 +3,7 @@ import StorageService.*;
 
 public class SelfStorage {
     public static void main(String[] args) {
-        StorageService storageService = new StorageService("SIT-Storage", 5);
+        StorageService storageService = new StorageService("SIT-Storage", 5, 100);
         Person p1 = new Person("Tharadon ", " Saenmart");
         Storage myStorage = storageService.rentStorage(p1, 1.0, 1.0);
         Storage myStorage2 = storageService.rentStorage(p1, 2.0, 2.0);

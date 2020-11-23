@@ -8,7 +8,7 @@ public class ServiceCalculation {
     }
 
     public double getServiceFee(double storageArea){
-        return serviceRate * storageArea;
+        return (serviceRate * storageArea);
     }
 
 } 
