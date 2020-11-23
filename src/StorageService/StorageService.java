@@ -12,7 +12,7 @@ public class StorageService {
     private StorageList storages;
     private ServiceCalculation serviceCalculation;
     
-    public StorageService(String name, int storageLot) {
+    public StorageService(String name, int storageLot, double serviceRate) {
         this.name = name;
         this.storages = new StorageList(storageLot);
         this.serviceCalculation = new ServiceCalculation(serviceRate);
