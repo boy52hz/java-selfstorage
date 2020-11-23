@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/StorageService/StorageList.java</file>
-            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/Main.java</file>
-            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/StorageService/Storage.java</file>
-            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/StorageService/StorageType.java</file>
-            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/Base/Person.java</file>
+            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/StorageService/ServiceCalculation.java</file>
+            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/StorageService/StorageService.java</file>
+            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/SelfStorage.java</file>
+            <file>file:/C:/Users/boy52hz/Documents/NetBeansProjects/SelfStorage/src/dist/manifest.mf</file>
         </group>
     </open-files>
 </project-private>
