@@ -15,6 +15,7 @@ public class StorageService {
     public StorageService(String name, int storageLot) {
         this.name = name;
         this.storages = new StorageList(storageLot);
+        this.serviceCalculation = new ServiceCalculation(serviceRate);
     }
 
     public Storage rentStorage(Person customer, double lengthM, double widthM) {
