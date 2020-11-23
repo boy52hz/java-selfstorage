@@ -47,10 +47,6 @@ public class StorageService {
         return storages.isFull();
     }
     
-    public double getServiceFee(Storage storage){
-        double storageArea = storage;
-        return serviceCalculation.getServiceFee(storageArea);
-    }
 
     @Override
     public String toString() {
